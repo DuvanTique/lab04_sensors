@@ -186,6 +186,13 @@ donde:
   θ_i = angle_min + i · angle_increment   (ángulo del punto i, en radianes)
 ```
 
+### Resultados
+
+![Medicion Pie de Rey](resultados/MedicionPiedeReyLidar.jpg)
+![Medicion Codigo](resultados/ResultadosLidar.png)
+![Grafica realizada con mathplotlib](resultados/ResultadosLidar2.png)
+
+ 
 ### Ejecuciòn
 
 ```bash
