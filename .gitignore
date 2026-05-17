@@ -1,0 +1,12 @@
+# Archivos compilados de Python
+*.pyc
+__pycache__/
+
+# Archivos de ROS
+build/
+devel/
+*.bag
+
+# Archivos temporales
+*~
+.*.swp
