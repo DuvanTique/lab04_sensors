@@ -70,7 +70,7 @@ Frecuencia de publicación: **10 Hz** (configurable en el `delay()` del Arduino)
  
 ---
 
-
+### Ejecuciòn
 
 ```bash
 rosrun rosserial_python serial_node.py /dev/ttyACM0
@@ -113,6 +113,9 @@ Campos principales de `sensor_msgs/Image`:
 | `data`      | Arreglo plano de valores de píxel   | uint8[]  |
  
 Frecuencia típica: **30 Hz**.
+
+
+### Ejecuciòn
 
 ```bash
 rosrun usb_cam usb_cam_node
@@ -166,7 +169,7 @@ sensor_msgs/LaserScan
 
 ## Actividad 4 — Procesamiento de datos y validación de medidas
  
-### 4.1 Crear el entorno controlado (laberinto)
+### Crear el entorno controlado (laberinto)
  
 Construya un recinto rectangular sencillo con cartón o madera. Coloque un objeto de geometría conocida (ej.: una caja cuadrada de 20 cm × 20 cm o una regla plana de 30 cm) dentro del campo de visión del LIDAR y tome sus medidas reales con un pie de rey o cinta métrica.
 
@@ -183,6 +186,7 @@ donde:
   θ_i = angle_min + i · angle_increment   (ángulo del punto i, en radianes)
 ```
 
+### Ejecuciòn
 
 ```bash
 roslaunch rplidar_ros rplidar_c1.launch
