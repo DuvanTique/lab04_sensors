@@ -196,7 +196,7 @@ Para realizar la captura de los datos para la validaciòn se creo un còdigo en 
 ![Medicion Codigo](resultados/ResultadosLidar.png)
 ![Grafica realizada con mathplotlib](resultados/ResultadosLidar2.png)
 
-[![Ver video]([https://img.youtube.com/vi/xaudO_EUKN8/0.jpg](https://youtu.be/hAL60cniSIE)
+[![Ver video](https://img.youtube.com/vi/xaudO_EUKN8/0.jpg)](https://youtu.be/hAL60cniSIE)
 
 
 ### Ejecuciòn
