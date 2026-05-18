@@ -208,6 +208,50 @@ rosrun lab04_sensors lidar_validator.py
 ```
 
 ### Actividad 5 — Hector SLAM
+
+### Respuestas técnicas
+
+¿Cuál es la función principal de hector_slam dentro del ecosistema ROS?
+
+hector_slam es un paquete de SLAM (Simultaneous Localization and Mapping) que permite construir un mapa 2D del entorno en tiempo real mientras estima la posición del robot dentro de ese mapa. Utiliza únicamente los datos del LIDAR (sin necesitar odometría ni IMU), lo que lo hace ideal para plataformas simples o entornos donde la odometría no es confiable.
+
+¿Utiliza odometría o solo escaneo LIDAR?
+hector_slam se basa exclusivamente en el escaneo del LIDAR para localización y mapeo. No requiere datos de odometría (encoders de ruedas). Esto es posible gracias a que usa un algoritmo de emparejamiento de escaneos (scan matching) con un mapa de ocupación de alta resolución. La desventaja es que puede perder la localización si el movimiento es demasiado rápido o si el entorno tiene pocas características distintivas.
+
+### Tópicos publicados por Hector SLAM
+ 
+| Tópico             | Tipo                          | Descripción                           |
+|--------------------|-------------------------------|---------------------------------------|
+| `/map`             | `nav_msgs/OccupancyGrid`      | Mapa de ocupación 2D                  |
+| `/slam_out_pose`   | `geometry_msgs/PoseStamped`   | Pose estimada del robot               |
+| `/poseupdate`      | `geometry_msgs/PoseWithCovarianceStamped` | Pose con covarianza       |
+| `/scanmatch_pose`  | `geometry_msgs/Pose2D`        | Resultado del scan matching           |
+ 
+---
+
+### Ejecuciòn
+
 ```bash
 roslaunch lab04_sensors hector_slam_c1.launch
 ```
+## Resumen de tipos de mensajes utilizados
+ 
+| Sensor          | Tópico                | Tipo de mensaje              | Frecuencia |
+|-----------------|-----------------------|------------------------------|------------|
+| HC-SR04 (Arduino)| `/UltraSound`        | `sensor_msgs/Range`          | 10 Hz      |
+| Cámara web      | `/usb_cam/image_raw`  | `sensor_msgs/Image`          | 30 Hz      |
+| Cámara web      | `/usb_cam/camera_info`| `sensor_msgs/CameraInfo`     | 30 Hz      |
+| RPLIDAR C1      | `/scan`               | `sensor_msgs/LaserScan`      | 10 Hz      |
+| Hector SLAM     | `/map`                | `nav_msgs/OccupancyGrid`     | ~1 Hz      |
+| Hector SLAM     | `/slam_out_pose`      | `geometry_msgs/PoseStamped`  | 10 Hz      |
+
+## 📚 Referencias
+ 
+1. [ROS Noetic Documentation](http://wiki.ros.org/noetic)
+2. [rosserial_arduino Tutorials](http://wiki.ros.org/rosserial_arduino/Tutorials)
+3. [usb_cam Package](http://wiki.ros.org/usb_cam)
+4. [RPLIDAR ROS Package](https://github.com/Slamtec/rplidar_ros)
+5. [Hector SLAM](http://wiki.ros.org/hector_slam)
+6. [Guía del Laboratorio - GitHub LABSIR](https://github.com/labsir-un/FRM_Lab_0_Intro_software)
+---
+
