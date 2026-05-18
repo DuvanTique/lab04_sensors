@@ -185,8 +185,12 @@ donde:
   r_i = ranges[i]        (distancia al punto i, en metros)
   θ_i = angle_min + i · angle_increment   (ángulo del punto i, en radianes)
 ```
+![Codigo](scripts/lidar_cartesian.py)
 
 ### Resultados
+Para realizar la captura de los datos para la validaciòn se creo un còdigo en python el cual tomaba 50 muestras del lidar en un mismo angulo de direcciòn (0º) con esta informaciòn se calcula la desviaciòn estandar y el error porcentual, de tal manera que se puedan comparar los resultados con los obtenidos usando un calibrador.
+ 
+![Codigo](scripts/lidar_validator.py)
 
 ![Medicion Pie de Rey](resultados/MedicionPiedeReyLidar.jpg)
 ![Medicion Codigo](resultados/ResultadosLidar.png)
