@@ -245,6 +245,8 @@ roslaunch lab04_sensors hector_slam_c1.launch
 | Hector SLAM     | `/map`                | `nav_msgs/OccupancyGrid`     | ~1 Hz      |
 | Hector SLAM     | `/slam_out_pose`      | `geometry_msgs/PoseStamped`  | 10 Hz      |
 
+## Video Demostrativo
+![Video Demostrativo](https://img.youtube.com/vi/LeMs33HF_t0/0.jpg)]([https://www.youtube.com/watch?v=LeMs33HF_t0](https://youtu.be/LeMs33HF_t0))
 ## 📚 Referencias
  
 1. [ROS Noetic Documentation](http://wiki.ros.org/noetic)
